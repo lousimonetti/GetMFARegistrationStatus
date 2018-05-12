@@ -34,7 +34,7 @@ function Get-AzureMFARegistrationByGroup {
                                       "Group ID"=$g.objectid;
                                       "Members"=$m}
     } 
-    $final=@(); 
+    $results=@(); 
     $members | ForEach-Object{
         $curr= $_; $curr.Members | ForEach-Object{
             $m = get-msoluser -ObjectId $_.objectid; 
